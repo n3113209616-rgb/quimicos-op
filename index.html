@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Reales de Limpieza y Cuidado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        :root {
+            --verde-natural: #27ae60;
+            --azul-limpieza: #2980b9;
+            --naranja-cera: #d35400;
+            --fondo: #f9fbf9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--fondo);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- ENCABEZADO (HERO) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--verde-natural), var(--azul-limpieza));
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+        .btn-main {
+            background: white;
+            color: var(--verde-natural);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        .btn-main:hover { transform: translateY(-3px); }
+
+        /* --- SECCIONES DE PRODUCTOS --- */
+        .category-section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #444;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #ddd;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        /* --- TARJETA DE PRODUCTO --- */
+        .card {
+            background: white;
+            border-radius: 20px;
+            width: 320px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        /* Simulación de foto de botella */
+        .photo-placeholder {
+            height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+        .card h3 { color: #333; margin-bottom: 5px; font-size: 1.4rem; }
+        
+        .ml-badge {
+            background-color: #eee;
+            color: #555;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card p { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
+
+        .btn-buy {
+            display: block;
+            padding: 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .btn-buy:hover { opacity: 0.9; }
+
+        /* Colores botones */
+        .btn-natural { background-color: var(--verde-natural); }
+        .btn-quimico { background-color: var(--azul-limpieza); }
+        .btn-auto { background-color: var(--naranja-cera); }
+
+        /* --- FOOTER Y BOTÓN FLOTANTE --- */
+        footer { background: #333; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Soluciones Reales de Limpieza y Cuidado</h1>
+        <p>Calidad garantizada para ti, tu hogar y tu vehículo.</p>
+        <a href="https://wa.me/573113209616?text=Hola,%20me%20interesan%20tus%20productos" class="btn-main">
+            <i class="fab fa-whatsapp"></i> Pedir Cotización
+        </a>
+    </header>
+
+    <section class="category-section">
+        <div style="text-align: center;">
+            <h2 class="category-title"><i class="fas fa-leaf"></i> Línea Natural</h2>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <div class="photo-placeholder">
+                    <img src="https://via.placeholder.com/300x250/27ae60/ffffff?text=Champú+Natural" alt="Champú Guácimo">
+                </div>
+                <div class="card-body">
+                    <h3>Champú de Guácimo</h3>
+                    <span class="ml-badge">Contenido: 250 ml</span>
+                    <p>Fórmula 100% natural. Detiene la caída, fortalece la raíz y da vitalidad extrema.</p>
+                    <a href="https://wa.me/573113209616?text=Hola,%20me%20interesa%20el%20Champú%20de%20250ml" class="btn-buy btn-natural">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div style="text-align: center;">
+            <h2 class="category-title"><i class="fas fa-flask"></i> Línea Hogar y Vehículos</h2>
+        </div>
+        <div class="cards-container">
+            
+            <div class="card">
+                <div class="photo-placeholder">
+                    <img src="https://via.placeholder.com/300x250/2980b9/ffffff?text=Desmanchador+Ultra" alt="Desmanchador">
+                </div>
+                <div class="card-body">
+                    <h3>Desmanchador Ultra</h3>
+                    <span class="ml-badge">Contenido: 250 ml</span>
+                    <p>Limpieza profunda para pisos y loza sanitaria. Elimina manchas rebeldes al instante.</p>
+                    <a href="https://wa.me/573113209616?text=Hola,%20me%20interesa%20el%20Desmanchador%20de%20250ml" class="btn-buy btn-quimico">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="photo-placeholder">
+                    <img src="https://via.placeholder.com/300x250/d35400/ffffff?text=Cera+Brilladora+UV" alt="Cera UV">
+                </div>
+                <div class="card-body">
+                    <h3>Cera Brilladora UV</h3>
+                    <span class="ml-badge">Contenido: 500 ml</span>
+                    <p>Protección contra rayos UV para carros y motos. Brillo duradero y capa protectora.</p>
+                    <a href="https://wa.me/573113209616?text=Hola,%20me%20interesa%20la%20Cera%20de%20500ml" class="btn-buy btn-auto">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="background: #e9f7ef; padding: 2rem; text-align: center; margin-top: 2rem;">
+        <h3 style="color: #27ae60;">Envíos Seguros y Atención Personalizada</h3>
+        <p>Llevamos calidad a la puerta de tu casa.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Químicos OP. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/573113209616?text=Hola,%20vi%20su%20página%20web%20y%20quiero%20hacer%20un%20pedido" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
