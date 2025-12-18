@@ -846,6 +846,21 @@
             <h2>Químicos OP - Productos Profesionales</h2>
             <p>Descubre nuestra línea exclusiva de productos químicos profesionales para el cuidado personal, limpieza del hogar y protección de vehículos. Calidad garantizada con fórmulas innovadoras.</p>
             <a href="#productos" class="cta-button">Ver Productos</a>
+
+<div class="price-box">
+  <p class="price">Precio: <strong>$12.000</strong></p>
+
+  <label>Cantidad:</label>
+  <input type="number" min="0" value="0" class="qty" data-price="12000">
+
+  <p>Subtotal: $<span class="subtotal">0</span></p>
+</div>
+
+
+
+
+
+            
         </div>
     </section>
 
@@ -1381,5 +1396,17 @@
             });
         });
     </script>
+<script>
+document.querySelectorAll('.qty').forEach(input => {
+  input.addEventListener('input', () => {
+    const price = Number(input.dataset.price);
+    const qty = Number(input.value);
+    const subtotal = price * qty;
+    input.nextElementSibling.querySelector('.subtotal').innerText = subtotal.toLocaleString();
+  });
+});
+</script>
+
 </body>
+
 </html>
